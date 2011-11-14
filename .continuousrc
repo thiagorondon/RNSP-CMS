@@ -1,4 +1,7 @@
 
+curl -L http://cpanmin.us | perl - App::cpanminus
+cpanm inc::Module::Install
+cpanm --installdeps .
 perl Makefile.PL
 make test
 
