@@ -1,7 +1,22 @@
 
+# local::lib
+wget http://search.cpan.org/CPAN/authors/id/A/AP/APEIRON/local-lib-1.008004.tar.gz
+tar vxfzp local-lib-1.008004.tar.gz
+cd local-lib-1.008004
+perl Makefile.PL --bootstrap
+make test && make install
+echo 'eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)' >>~/.bashrc
+. ~/.bashrc
+cd ../
+
+# cpanminus
 curl -L http://cpanmin.us | perl - App::cpanminus
+
+# Dependencias do aplicativo
 cpanm inc::Module::Install
 cpanm --installdeps .
+
+# Executando testes
 perl Makefile.PL
 make test
 
