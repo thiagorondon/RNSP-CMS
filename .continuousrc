@@ -1,7 +1,7 @@
 #!/bin/bash  -ex
 
 # Parametro que pode ser útil em alguns cenários.
-sysctl vm.overcommit_memory=1
+# sysctl vm.overcommit_memory=1
 
 # Instalando dependencias da distribuição
 export DEBIAN_FRONTEND=noninteractive
