@@ -4,9 +4,9 @@
 # sysctl vm.overcommit_memory=1
 
 # Instalando dependencias da distribuição
-export DEBIAN_FRONTEND=noninteractive
+#export DEBIAN_FRONTEND=noninteractive
 #sudo apt-get -q -y install mysql-server mysql-client libmysqlclient15-dev
-sudo apt-get -q -y install build-essential
+#sudo apt-get -q -y install build-essential
 
 # local::lib
 mkdir /tmp/locallib
@@ -31,6 +31,6 @@ cpanm -v inc::Module::Install
 cpanm -v --installdeps .
 
 # Executando testes
-perl Makefile.PL
-make test
+#perl Makefile.PL
+#make test
 
