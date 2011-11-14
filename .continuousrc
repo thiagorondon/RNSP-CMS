@@ -1,4 +1,12 @@
 
+# Parametro que pode ser útil em alguns cenários.
+sysctl vm.overcommit_memory=1
+
+# Instalando dependencias da distribuição
+export DEBIAN_FRONTEND=noninteractive
+#apt-get -y install mysql-server mysql-client libmysqlclient15-dev
+apt-get -y install build-essential
+
 # local::lib
 wget http://search.cpan.org/CPAN/authors/id/A/AP/APEIRON/local-lib-1.008004.tar.gz
 tar vxfzp local-lib-1.008004.tar.gz
