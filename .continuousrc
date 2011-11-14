@@ -5,10 +5,12 @@
 
 # Instalando dependencias da distribuição
 export DEBIAN_FRONTEND=noninteractive
-#apt-get -y install mysql-server mysql-client libmysqlclient15-dev
-apt-get -y install build-essential
+#sudo apt-get -q -y install mysql-server mysql-client libmysqlclient15-dev
+sudo apt-get -q -y install build-essential
 
 # local::lib
+mkdir /tmp/locallib
+cd /tmp/locallib
 wget http://search.cpan.org/CPAN/authors/id/A/AP/APEIRON/local-lib-1.008004.tar.gz
 tar vxfzp local-lib-1.008004.tar.gz
 cd local-lib-1.008004
@@ -16,7 +18,10 @@ perl Makefile.PL --bootstrap
 make test && make install
 echo 'eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)' >>~/.bashrc
 . ~/.bashrc
-cd ../
+eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+
+# Retornando para o diretório de instalação
+cd $GIT_PATH
 
 # cpanminus
 curl -L http://cpanmin.us | perl - App::cpanminus
