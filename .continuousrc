@@ -1,3 +1,4 @@
+#!/bin/bash  -ex
 
 # Parametro que pode ser útil em alguns cenários.
 sysctl vm.overcommit_memory=1
