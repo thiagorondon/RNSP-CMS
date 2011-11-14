@@ -13,8 +13,8 @@ cd ../
 curl -L http://cpanmin.us | perl - App::cpanminus
 
 # Dependencias do aplicativo
-cpanm inc::Module::Install
-cpanm --installdeps .
+cpanm -v inc::Module::Install
+cpanm -v --installdeps .
 
 # Executando testes
 perl Makefile.PL
